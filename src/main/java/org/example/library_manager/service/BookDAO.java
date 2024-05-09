@@ -12,6 +12,8 @@ public class BookDAO implements IBookDAO {
 
     private static final String SELECT_ALL_BOOKS = "select * from books ;";
     private static final String SELECT_BOOK_BY_ID = "select * from books where id = ?;";
+    private static final String BORROW_BOOK = "INTO book_card (id, book_id, student_id, borrowing_day, returning_day, status) VALUES (?, ?, ?, ?, ?, ?)";
+    private static final String UPDATE_BOOK_QUANTITY = "UPDATE books SET quantity = quantity - 1 WHERE id = ? AND quantity > 0";
     ConnectionDAO cs = new ConnectionDAO();
     @Override
     public List<Book> showAllBooks() {
@@ -62,8 +64,5 @@ public class BookDAO implements IBookDAO {
         return book;
     }
 
-    @Override
-    public boolean borrowBook(Book book) throws SQLException {
-        return false;
-    }
+
 }

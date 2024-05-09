@@ -41,7 +41,7 @@
                                           <td><c:out value="${book.description}"/></td>
                                           <td><c:out value="${book.quantity}"/></td>
                                           <td>
-                                              <button type="button" class="btn btn-info" onclick="window.location.href='/books?action=edit&id=${student.getId()}'">Borrow</button>
+                                              <button type="button" class="btn btn-info" onclick="window.location.href='/books?action=borrow&id=${book.getId()}'">Borrow</button>
                                           </td>
                                       </tr>
                                   </c:forEach>

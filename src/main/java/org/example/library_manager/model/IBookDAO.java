@@ -6,5 +6,4 @@ import java.util.List;
 public interface IBookDAO {
     public List<Book> showAllBooks();
     public Book searchBookById(int id);
-    public boolean borrowBook(Book book) throws SQLException;
 }
